@@ -1,0 +1,15 @@
+#!/bin/ksh
+
+# 13-Mar-08, pdv: set title of window if esc-works
+
+# set -v -x
+
+echo
+echo ---- setting title to $1 -------- 
+echo
+
+echo -n -e "\033]0;$1\007"
+
+echo
+echo
+

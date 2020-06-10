@@ -1,0 +1,19 @@
+#!/bin/ksh
+
+# 09-May-18, pdv: find ip location
+
+# set -v -x
+
+echo
+echo ---- what do we know of our ip-location -------- 
+echo
+
+curl ipinfo.io/ip > /tmp/$$
+
+curl ipinfo.io/`cat /tmp/$$` 
+
+
+echo
+echo ---- done : `cat /tmp/$$` ---- 
+echo
+

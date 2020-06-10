@@ -1,0 +1,16 @@
+#!/bin/ksh
+
+# 13-Mar-02, pdv: monitor looop
+
+# set -v -x
+
+# echo
+# echo ---- wtd  -------- 
+# echo
+
+title "monitor loop running here..." 
+
+while true ; do  iostat -d -C 3 5 ; ping -c3 -t3 www.nu.nl; system_profiler SPPowerDataType | grep "Cyc\|mAh\|Charging" ; echo . ; sleep 3 ; done 
+
+echo ------- wtd done --- 
+

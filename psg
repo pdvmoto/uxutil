@@ -1,0 +1,17 @@
+#!/bin/ksh
+
+# 13-MAr-02, pdv: grep process list
+
+# set -v -x
+
+echo
+echo ---- occurrences of $1 -------- 
+echo
+
+
+ps -ef | grep -v $$ |  grep $1
+
+echo
+echo ---- Total occurrences :   `ps -ef | grep -v $$ | grep -c $1 ` ---- 
+echo
+

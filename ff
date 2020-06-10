@@ -1,0 +1,18 @@
+#!/bin/ksh
+
+# 13-MAr-20, pdv: find, suppress errors
+
+# set -v -x
+
+echo
+echo ---- setting title to $1 -------- 
+echo
+
+echo finding..  $*
+echo 
+
+find . -name $* 2>/dev/null 
+
+echo
+echo
+
