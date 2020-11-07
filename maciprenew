@@ -1,0 +1,16 @@
+#!/bin/ksh
+
+echo Renew cable-IP address on Macbook
+
+set -v
+
+sudo ipconfig set en0 BOOTP
+sudo ipconfig set en0 DHCP
+
+set +v
+
+echo Give it 5 sec, then ping...
+sleep 5
+
+ping -t3 -c3 www.google.com 
+
