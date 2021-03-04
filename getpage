@@ -1,0 +1,22 @@
+#!/bin/ksh
+
+# 26-May-20, pdv: get an html-page behind paywall
+
+# set -v -x
+
+echo
+echo ---- fetching of $1, will op en in dflt browser -------- 
+echo
+
+echo -- testing ampersand removal
+echo `echo $1 | cut -d'&' -f 1 `
+echo 
+
+curl `echo $1 | cut -d'&' -f 1 ` > $TMPDIR/$$.html
+# curl $1 > $TMPDIR/$$.html
+
+open $TMPDIR/$$.html
+ 
+echo .
+echo getpage done.
+echo . 
