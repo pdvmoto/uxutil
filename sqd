@@ -1,0 +1,25 @@
+#!/bin/ksh
+
+# May 2021 - script to start sqldeveloper, needs to have location + version..
+
+# set -v -x
+
+SQLDEV_LOC=/Users/pdvbv/ora_193/sqldev202
+SQLDEV_APP=SQLDeveloper.app
+SQLDEV_OUT=/tmp/sqldev_$$.out
+
+echo
+echo starting SQL-Developer  
+echo
+echo sql dev location : ${SQLDEV_LOC}
+echo sql dev app      : ${SQLDEV_APP}
+echo sql dev output   : ${SQLDEV_OUT} 
+echo 
+
+# cd ${LOCATION_SQLDEV}
+nohup open ${SQLDEV_LOC}/${SQLDEV_APP} > ${SQLDEV_OUT} 2>&1 & 
+
+echo
+echo Started ${SQLDEV_APP}, you should see it appear on screen (in a few seconds)...
+echo
+
