@@ -10,7 +10,19 @@
 
 title "monitor loop running here..." 
 
-while true ; do  iostat -d -C 3 5 ; ping -c3 -t3 www.nu.nl; system_profiler SPPowerDataType | grep "Cyc\|mAh\|Charging" ; echo . ; sleep 3 ; done 
+
+while true 
+do  
+  iostat -d -C 3 7  
+  ping -c2 -t3 www.nu.nl 
+  # system_profiler SPPowerDataType | grep "Cyc\|mAh\|Charging" 
+  system_profiler SPPowerDataType | grep "Cyc\|mAh" 
+  echo .
+  echo sh be: "3      15     124"
+  curl -s https://myadventure.bike/Trips/137 | grep -i "spring 2016" | wc 
+  echo . 
+  sleep 3 
+done 
 
 echo ------- wtd done --- 
 
