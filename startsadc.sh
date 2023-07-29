@@ -4,6 +4,21 @@
 
 # set -v -x
 
+# -----------------
+
+# if entrypoint or startup script is not root:
+# chmod oracle:dba /var/log/sa
+# chmod oracle:dba /var/log/sa/*
+#
+#
+# Add this nohup somewhere in the start-sequence.. try starting sadc
+# it will wait until nr of minutes/10, and start collecting
+#
+# nohup /opt/oracle/startsadc.sh & 
+#
+#
+# ------------------
+
 echo
 echo ---- will try to start sar-collection at 10min, and run for 1 day. --- 
 echo 
@@ -23,9 +38,9 @@ echo
 
  while expr `date +%M` % 10  != 0 ; do echo `date`  ; sleep 10 ; done 
 
-echo we got to 00, ready to start sadc..., try using sa1
+echo we got to 00, ready to start sadc..., try using sa1, 600=10min, and repeat forever..
 
-/usr/lib64/sa/sa1 600 30
+/usr/lib64/sa/sa1 600 6000000
 
 # may also need: /usr/lib64/sa/sadc -F -L -S DISK 600 30 - 
 
