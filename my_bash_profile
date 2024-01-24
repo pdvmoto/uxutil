@@ -1,0 +1,76 @@
+
+# add libpq and oracle to path
+export PATH=$PATH:/usr/local/Cellar/libpq/15.4/bin:/Users/pdvbv/ora_clnt/ic198
+export LD_LIBRARY_PATH=/Users/pdvbv/ora_clnt/ic198
+export DYLD_LIBRARY_PATH=/Users/pdvbv/ora_clnt/ic198:/usr/local/opt/openssl/lib
+export SQLPATH=/Users/pdvbv/pdvmoto/binsql:/Users/pdvbv/Downloads/scripts
+
+export TNS_ADMIN=/Users/pdvbv/Downloads/scripts
+
+# try for cx_oracle
+export PYTHONPATH=/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages
+
+#needed for sqlplus
+export EDITOR=vi
+
+# format of history output
+export HISTTIMEFORMAT="%d/%m/%y %T "
+
+# list of aliases..
+
+# alias bui="open /Applications/Opera.app/ http://www.buienradar.nl "
+alias bui="open -a opera http://www.buienradar.nl "
+alias gp="/usr/local/bin/getpage \`pbpaste\` " 
+alias ll="ls -la" 
+alias ltm="ls -ltra" 
+alias cdsql='cd /Users/pdvbv/Downloads/scripts'
+alias rls='rlwrap sqlplus /nolog '
+# alias sqlcl='/Users/pdvbv/Downloads/sqlcl/bin/sql '
+alias sqlcl='/Users/pdvbv/Downloads/sqlcl_23/sqlcl/bin/sql ' 
+alias sshp='ssh 10.222.100.52' 
+alias mktun='cd ; cd zz_portbase ; ./mk_tunnel.sh'
+alias sshpk='knock -d 1500 -v 34.240.203.200 11678 13798 9143;ssh 10.222.100.52' 
+alias sshsc='knock -d 1500 -v 34.240.203.200 11678 13798 9143;ssh 10.104.50.157' 
+
+# if psg is there..
+# alias psql_kill="psg psql  | tail -n +4 | head -n +1 | cut -c 6-12 | kill -9 `xargs` " 
+
+alias ora193='cd /Users/pdvbv/ora_193/vagrant-boxes/OracleDatabase/19.3.0'
+alias ora21='cd /Users/pdvbv/ora_21/vagrant/database/ol8_21_rpm'
+alias ora21='/Users/pdvbv/ora_23/db_vm'
+alias oradock='cd /Users/pdvbv/data/docker_193/docker-images/OracleDatabase/SingleInstance/dockerfiles/19.3.0 ' 
+
+#docker stuff
+alias dckr='open /Applications/Docker.app/'
+alias dexit='docker exec -it '
+
+# some pg and yuga stuff
+alias cdpg='cd /Users/pdvbv/data/gittest/pg_scripts '
+alias yslc='ysqlsh -h eu-west-3.cf95b91d-ebcd-4430-895a-67169959070c.aws.ybdb.io -p 5433 -U admin -d yugabyte' 
+alias ysl='ysqlsh -h localhost -p 5433 -U yugabyte '
+
+# test failover/reconnect capabilities.. yb and cr
+alias ysf='ysqlsh postgresql://yugabyte@localhost:5434,localhost:5433,localhost:5432,localhost:5435?connect_timeout=2  '
+# alias crf='psql postgresql://root@localhost:26263,localhost:26258,localhost:26257:localhost:26260,localhost:26261,localhost:26262,localhost:26259/defaultdb?connect_timeout=2 ' 
+alias crf='psql postgresql://root@localhost:26250/defaultdb?connect_timeout=2 ' 
+
+# export PS1='\h:\W \u\$ > '
+export PS1='\h:\W \u\$ > '
+
+echo ------------ Terminal ? ------------------ 
+echo 
+echo This was bash_profile from pdvbv... 
+echo .
+echo You are `whoami`
+echo 
+echo -------------------------------- 
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+# PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+# export PATH
+
+# Setting PATH for Python 3.8
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+export PATH
