@@ -1,0 +1,9 @@
+#! /bin/ksh
+
+# chk_temps.sh : loop to check temperatures of CPU and GPU on mac
+
+# need to be su
+# sampler will just loop...
+
+powermetrics --samplers smc |grep -i "die temperature"
+
