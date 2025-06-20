@@ -20,6 +20,6 @@ echo
 nohup open ${SQLDEV_LOC}/${SQLDEV_APP} > ${SQLDEV_OUT} 2>&1 & 
 
 echo
-echo Started ${SQLDEV_APP}, you should see it appear on screen (in a few seconds)...
+echo Started ${SQLDEV_APP}, should appear on screen in a few seconds...
 echo
 

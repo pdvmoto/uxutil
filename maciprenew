@@ -4,8 +4,8 @@ echo Renew cable-IP address on Macbook
 
 set -v
 
-sudo ipconfig set en0 BOOTP
-sudo ipconfig set en0 DHCP
+sudo ipconfig set en3 BOOTP
+sudo ipconfig set en3 DHCP
 
 set +v
 

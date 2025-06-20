@@ -1,0 +1,5 @@
+# min hr dom mon dow fullpath
+*     *   *  *    *  /Users/pdvbv/do_cr.sh                         >> ~/crontab.out 2>&1
+0     *   *  *    *  /Users/pdvbv/data/pdvmoto/uxutil/sarmac1hr.sh >> ~/crontab.out 2>&1
+
+
