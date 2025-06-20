@@ -20,24 +20,28 @@
 # N_USR=3.141529
 # printf "%4.2f\n" $N_USR
 
+IOSTAT=/usr/sbin/iostat 
 SARFILE=~/var/log/sa/sa`date +"%d"`
 INTERVAL_SEC=60
-NR_ITER=60
+# NR_ITER=10
+LOOP_TIME=600
 
 # todo: remove the SARFILE if older than 20days
 
 START_TIME_SEC=$(date +%s)
-LOOP_TIME=3600
 
 while [ $(($(date +%s) - ${START_TIME_SEC} )) -lt ${LOOP_TIME} ]
 do 
 
-  echo $0 running start loop interval $START_TIME_SEC $LOOP_TIME $INTERVAL_SEC
+  echo $0 running start loop interval $START_TIME_SEC $LOOP_TIME $INTERVAL_SEC $NR_ITER
 
-  SAR=$(iostat -d -C $INTERVAL_SEC 2 | tail -n 1)
+  SAR=$( $IOSTAT -d -C $INTERVAL_SEC 2 | tail -n 1)
   # DT=${date +'%H:%M:%S'}
 
   echo " " `date +"%H:%M:%S"` "-" $SAR " " | tee -a $SARFILE
+
+  # make sure we surpass the loop_time
+  # sleep 2
 
 done
 
